@@ -5,6 +5,7 @@ project(acorn-cup-chat)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_subdirectory(libs/portaudio EXCLUDE_FROM_ALL)
-
 add_executable(acorn-cup-chat main.cpp)
+
+add_subdirectory(libs/portaudio EXCLUDE_FROM_ALL)
+target_link_libraries(acorn-cup-chat PRIVATE portaudio_static)
